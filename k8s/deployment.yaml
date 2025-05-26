@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextjs-ui
+  namespace: dev-cosco
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nextjs-ui
+  template:
+    metadata:
+      labels:
+        app: nextjs-ui
+    spec:
+      containers:
+        - name: nextjs-ui
+          image: gcr.io/your-gcp-project-id/nextjs-ui:latest  # Replace dynamically via pipeline
+          ports:
+            - containerPort: 8081
+          env:
+            - name: NODE_ENV
+              value: "production"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nextjs-ui-service
+  namespace: dev-cosco
+spec:
+  selector:
+    app: nextjs-ui
+  ports:
+    - port: 80
+      targetPort: 8081
+  type: ClusterIP

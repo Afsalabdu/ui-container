@@ -1,0 +1,68 @@
+@use "./variables" as vars;
+// Spacing utilities
+@each $name, $value in vars.$spacing {
+    .m-#{$name} {
+        margin: $value;
+    }
+    .mt-#{$name} {
+        margin-top: $value;
+    }
+    .mb-#{$name} {
+        margin-bottom: $value;
+    }
+    .ml-#{$name} {
+        margin-left: $value;
+    }
+    .mr-#{$name} {
+        margin-right: $value;
+    }
+
+    .p-#{$name} {
+        padding: $value;
+    }
+    .pt-#{$name} {
+        padding-top: $value;
+    }
+    .pb-#{$name} {
+        padding-bottom: $value;
+    }
+    .pl-#{$name} {
+        padding-left: $value;
+    }
+    .pr-#{$name} {
+        padding-right: $value;
+    }
+}
+
+// Display utilities
+.d-none {
+    display: none;
+}
+.d-block {
+    display: block;
+}
+.d-flex {
+    display: flex;
+}
+.d-grid {
+    display: grid;
+}
+
+// Visibility
+.sp-overflow-auto {
+    overflow: auto;
+}
+
+// Heights
+.sp-max-height-600 {
+    max-height: 600px;
+}
+
+// Typography
+
+.sp-text-red {
+    color: vars.$error-color;
+}
+.sp-text-blue-dark {
+    color: vars.$blueDark;
+}

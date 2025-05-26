@@ -1,0 +1,106 @@
+{
+  "posts": {
+    "data": [
+      {
+        "whse": 734,
+        "frt": 10.50,
+        "fi": "Y",
+        "trm": "col",
+        "shippoint": "cowley",
+        "sta": "LA",
+        "zip": 70526,
+        "mix": "N",
+        "imp": "N",
+        "rtvnlc": "Y",
+        "shpphn": 1234567890,
+        "carrier": "CALL TRAFFIC",
+        "id": 1
+      },
+      {
+        "whse": 735,
+        "frt": 10.50,
+        "fi": "Y",
+        "trm": "col",
+        "shippoint": "cowley",
+        "sta": "LA",
+        "zip": 70526,
+        "mix": "N",
+        "imp": "N",
+        "rtvnlc": "Y",
+        "shpphn": 1234567890,
+        "carrier": "CALL TRAFFIC",
+        "id": 2
+      }
+    ],
+    "ok": true,
+    "status": 201
+  },
+  "gets": {
+    "data": [
+      {
+        "whse": 734,
+        "frt": 10.50,
+        "fi": "Y",
+        "trm": "col",
+        "shippoint": "cowley",
+        "sta": "LA",
+        "zip": 70526,
+        "mix": "N",
+        "imp": "N",
+        "rtvnlc": "Y",
+        "shpphn": 1234567890,
+        "carrier": "CALL TRAFFIC",
+        "id": 1
+      },
+      {
+        "whse": 735,
+        "frt": 10.50,
+        "fi": "Y",
+        "trm": "col",
+        "shippoint": "cowley",
+        "sta": "LA",
+        "zip": 70526,
+        "mix": "N",
+        "imp": "N",
+        "rtvnlc": "Y",
+        "shpphn": 1234567890,
+        "carrier": "CALL TRAFFIC",
+        "id": 2
+      }
+    ]
+  },
+  "puts": {
+    "data": [
+      {
+        "whse": 734,
+        "frt": 10.50,
+        "fi": "Y",
+        "trm": "col",
+        "shippoint": "cowley",
+        "sta": "LA",
+        "zip": 70526,
+        "mix": "N",
+        "imp": "N",
+        "rtvnlc": "Y",
+        "shpphn": 1234567890,
+        "carrier": "CALL TRAFFIC",
+        "id": 1
+      },
+      {
+        "whse": 735,
+        "frt": 10.50,
+        "fi": "Y",
+        "trm": "col",
+        "shippoint": "cowley",
+        "sta": "LA",
+        "zip": 70526,
+        "mix": "N",
+        "imp": "N",
+        "rtvnlc": "Y",
+        "shpphn": 1234567890,
+        "carrier": "CALL TRAFFIC",
+        "id": 2
+      }
+    ]
+  }
+}

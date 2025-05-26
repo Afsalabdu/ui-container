@@ -1,0 +1,16 @@
+@use "./_partials/variables";
+
+#main-header {
+    height: 64px;
+    max-height: 64px;
+}
+.sp-breadcrumb {
+    margin-bottom: 30px;
+}
+// .sp-breadcrumb {
+//   margin-top: 19px;
+// }
+h1 {
+    color: variables.$gray-900;
+    line-height: 56px;
+}

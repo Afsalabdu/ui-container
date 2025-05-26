@@ -1,0 +1,43 @@
+steps:
+
+# Install docker-compose and build the image
+
+- name: 'gcr.io/cloud-builders/docker'
+      
+# Push the image to Artifact Registry
+
+- name: 'gcr.io/cloud-builders/docker'
+
+  args: ['push', 'us-central1-docker.pkg.dev/powerful-layout-457806-e9/costco-foundation-poc/costco-presto-app']
+ 
+# Deploy to Cloud Run
+
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+
+  entrypoint: gcloud
+
+  args:
+
+    - run
+
+    - deploy
+
+    - costco-presto-app
+
+    - --image=us-central1-docker.pkg.dev/powerful-layout-457806-e9/costco-foundation-poc/costco-presto-app
+
+    - --platform=managed
+
+    - --region=us-central1
+
+    - --allow-unauthenticated
+ 
+images:
+
+- us-central1-docker.pkg.dev/powerful-layout-457806-e9/costco-foundation-poc/costco-presto-app
+ 
+options:
+
+  logging: CLOUD_LOGGING_ONLY
+
+ 

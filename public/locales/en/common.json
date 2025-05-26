@@ -1,0 +1,91 @@
+{
+    "activate": "Activate",
+    "at": "at",
+    "cancelConfirmAlert": {
+        "title": "Unsaved Changes Detected",
+        "body1": "You have unsaved changes on this page. If you navigate away now, the data you entered will be lost.",
+        "body2": "Are you sure you want to leave this page?"
+    },
+    "breadcrumb": {
+        "facility-maintenance": "Shipping Facility Maintenance",
+        "help-support": "Help & Support",
+        "home": "Home",
+        "site-map": "Site map",
+        "submit-traceability-data": "Submit Traceability Data",
+        "tlc-maintenance": "TLC Source Maintenance",
+        "traceability-history": "Traceability History"
+    },
+    "button": {
+        "cancel": "Cancel",
+        "clearFields": "Clear Fields",
+        "confirm": "Confirm",
+        "goBack": "Go Back",
+        "save": "Save",
+        "search": "Search",
+        "yes": "Yes"
+    },
+    "common": {
+        "provideOne": "Provide at least one of the following"
+    },
+    "created": "Created",
+    "deactivate": "Deactivate",
+    "deactivated": "Deactivated",
+    "delete": "Delete",
+    "edit": "Edit",
+    "edited": "Edited",
+    "error": {
+        "underConstruction": "This page is under construction"
+    },
+    "footer": {
+        "copyright": " © 1998 — 2024 Costco Wholesale Corporation. All rights reserved."
+    },
+    "home": {
+        "facilityMaintenanceSubTitle": "Add or update Shipping Facilities",
+        "facilityMaintenanceTitle": "Shipping Facility Maintenance",
+        "historicalDataSubmissionTitle": "Historical Data Submissions",
+        "submitKDESubTitle": "Upload or submit KDE data to Costco",
+        "submitKDETitle": "Submit Traceability Data",
+        "title": "FDA Traceability",
+        "tlcSourceMaintenanceTitle": "TLC Source Maintenance",
+        "tlcSourceMaintenanceSubTitle": "Add or Update TLC Source",
+        "traceabilityHistoryTitle": "Traceability History",
+        "traceabilityHistorySubTitle": "See KDE items previously submitted"
+    },
+    "loader": {
+        "message": "Please Wait, System Processing"
+    },
+    "modalTitles": {
+        "confirm": "Confirm"
+    },
+    "noRecordsFound": "No records found.",
+    "pages": {
+        "caNotice": "CA Notice",
+        "facilityMaintenance": "Shipping Facility Maintenance",
+        "helpSupport": "Help & Support",
+        "logout": "LOG OUT",
+        "privacyChoice": "Your Privacy Choice",
+        "privacyRights": "Your Privacy Rights",
+        "siteMap": "Site Map",
+        "submitKDE": "Submit Traceability Data",
+        "submitKDETitle": "Submit Traceability Data",
+        "termsConditions": "Terms and Conditions",
+        "tlcSourceMaintenance": "TLC Source Maintenance",
+        "traceabilityHistory": "Traceability History",
+        "historicalDataSubmission": "Historical Data Submissions"
+    },
+    "salutationsList": {
+        "welcome": "Welcome"
+    },
+    "status": "Status",
+    "title": "Vendor Food Traceability Portal",
+    "updated": "Updated",
+    "userInactivityAlert": {
+        "body": "Your session will expire in 5 minutes due to inactivity. Please save your work or take action to continue your session.",
+        "title": "Session Timeout Warning"
+    },
+    "unauthorized": {
+        "body": "Error verifying user credentials, please ensure your information is correct and try again. If your error persists, contact your  <link>VAM administrator here. </link>",
+        "buttonText": "Back to Login Screen",
+        "title": "Access Denied"
+    }
+}

@@ -1,0 +1,10 @@
+.sp-fill-height {
+    min-height: 100vh;
+    min-height: 100svh;
+}
+.sp-error-page {
+    background: linear-gradient(333deg, #0094d1 -26.41%, #12329a 115.57%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

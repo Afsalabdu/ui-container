@@ -1,0 +1,36 @@
+{
+  "name": "panda",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "json-server": "json-server --watch db.json --port 4000"
+  },
+  "dependencies": {
+    "@mui/material": "^6.4.11",
+    "apisauce": "^3.1.1",
+    "json-server": "^1.0.0-beta.3",
+    "next": "15.3.2",
+    "next-intl": "^4.1.0",
+    "postcss": "^8.5.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.56.4"
+  },
+  "devDependencies": {
+    "@costco/merch-ui-components": "^0.1.77",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.7",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.2",
+    "sass": "^1.89.0",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5"
+  }
+}

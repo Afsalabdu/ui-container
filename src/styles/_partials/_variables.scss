@@ -1,0 +1,41 @@
+// Colors
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$error-color: #d32029;
+$blueDark: #002242;
+$clrError: #c00000;
+$costco-red: #e51937;
+$costco-blue: #005dab;
+$gray-900: #313335;
+$gray-700: #64686c;
+$clrGrey44: #707070;
+$clrPalaceBlue: #3071a9;
+$grey: #d9d9d9;
+$gray-100: #f4f5f5;
+$clrWhite: #fff;
+
+// Spacing
+$spacing-unit: 8px;
+$spacing: (
+    "xs": $spacing-unit,
+    "sm": $spacing-unit * 2,
+    "md": $spacing-unit * 3,
+    "lg": $spacing-unit * 4,
+    "xl": $spacing-unit * 5,
+);
+
+// Z-index
+$z-index: (
+    "modal": 1000,
+    "dropdown": 900,
+    "header": 800,
+    "footer": 700,
+);
+
+// Max-width
+$alert-popup-width: 500px;
+
+//font-weight
+$font-normal: 400;
+$font-size-small: 14px;
