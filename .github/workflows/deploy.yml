@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
+    - name: Checkout Repository
       uses: actions/checkout@v3
 
     - name: Set up Google Cloud SDK
@@ -21,7 +21,10 @@ jobs:
         service_account_key: ${{ secrets.GCP_CREDENTIALS }}
         export_default_credentials: true
 
-    - name: Authenticate to GKE
+    - name: Validate gcloud auth
+      run: gcloud auth list
+
+    - name: Authenticate kubectl with GKE
       run: |
         gcloud container clusters get-credentials my-gke-cluster \
           --zone ${{ secrets.GCP_ZONE }} \
@@ -37,9 +40,11 @@ jobs:
         docker push $IMAGE
         echo "IMAGE=$IMAGE" >> $GITHUB_ENV
 
+    - name: Create Namespace if not exists
+      run: |
+        kubectl get namespace dev-cosco || kubectl create namespace dev-cosco
+
     - name: Deploy to GKE
       run: |
-        kubectl create namespace dev-cosco --dry-run=client -o yaml | kubectl apply -f -
-        kubectl apply -f k8s/deployment.yaml \
-          --namespace dev-cosco \
-          --record=true
+        # Substitute the dynamic image tag in deployment.yaml
+        sed "s|gcr.io/YOUR-GCP-PROJECT-ID/nextjs-ui:latest|${IMAGE}|" k8s/deployment.yaml | kubectl apply -f -
