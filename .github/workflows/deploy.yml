@@ -1,50 +1,52 @@
-name: Deploy to GKE
+name: Deploy Next.js UI to GKE
 
 on:
   push:
     branches:
-      - main
+      - main  # Or whichever branch you want to trigger deployment
 
 jobs:
   deploy:
-    name: Build & Deploy to GKE
+    name: Build and Deploy to GKE
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
+      # Step 1: Checkout Code
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-    - name: Set up Google Cloud SDK
-      uses: google-github-actions/setup-gcloud@v1
-      with:
-        project_id: ${{ secrets.GCP_PROJECT }}
-        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
-        export_default_credentials: true
+      # Step 2: Authenticate to GCP using the service account
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
 
-    - name: Validate gcloud auth
-      run: gcloud auth list
+      # Step 3: Setup gcloud CLI with kubectl component
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v1
+        with:
+          project_id: ${{ secrets.GCP_PROJECT }}
+          install_components: 'kubectl'
 
-    - name: Authenticate kubectl with GKE
-      run: |
-        gcloud container clusters get-credentials my-gke-cluster \
-          --zone ${{ secrets.GCP_ZONE }} \
-          --project ${{ secrets.GCP_PROJECT }}
+      # Step 4: Configure kubectl to use the GKE cluster
+      - name: Configure kubectl
+        run: |
+          gcloud container clusters get-credentials my-gke-cluster \
+            --zone ${{ secrets.GCP_ZONE }} \
+            --project ${{ secrets.GCP_PROJECT }}
 
-    - name: Configure Docker for GCR
-      run: gcloud auth configure-docker
+      # Step 5: Build Docker image
+      - name: Build Docker Image
+        run: |
+          docker build -t gcr.io/${{ secrets.GCP_PROJECT }}/nextjs-ui:$GITHUB_SHA .
 
-    - name: Build and Push Docker Image
-      run: |
-        IMAGE=gcr.io/${{ secrets.GCP_PROJECT }}/nextjs-ui:${{ github.sha }}
-        docker build -t $IMAGE .
-        docker push $IMAGE
-        echo "IMAGE=$IMAGE" >> $GITHUB_ENV
+      # Step 6: Push Docker image to GCR
+      - name: Push to GCR
+        run: |
+          gcloud auth configure-docker
+          docker push gcr.io/${{ secrets.GCP_PROJECT }}/nextjs-ui:$GITHUB_SHA
 
-    - name: Create Namespace if not exists
-      run: |
-        kubectl get namespace dev-cosco || kubectl create namespace dev-cosco
-
-    - name: Deploy to GKE
-      run: |
-        # Substitute the dynamic image tag in deployment.yaml
-        sed "s|gcr.io/YOUR-GCP-PROJECT-ID/nextjs-ui:latest|${IMAGE}|" k8s/deployment.yaml | kubectl apply -f -
+      # Step 7: Deploy to GKE
+      - name: Deploy to GKE
+        run: |
+          kubectl set image deployment/nextjs-ui-deployment nextjs-ui=gcr.io/${{ secrets.GCP_PROJECT }}/nextjs-ui:$GITHUB_SHA -n dev-cosco
