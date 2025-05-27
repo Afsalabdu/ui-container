@@ -29,10 +29,10 @@ jobs:
           install_components: 'kubectl'
 
       # Step 4: Configure kubectl to use the GKE cluster
-      - name: Configure kubectl
+      - name: Configure kubectl for GKE (regional)
         run: |
           gcloud container clusters get-credentials my-gke-cluster \
-            --zone ${{ secrets.GCP_ZONE }} \
+            --region ${{ secrets.GCP_REGION }} \
             --project ${{ secrets.GCP_PROJECT }}
 
       # Step 5: Build Docker image
