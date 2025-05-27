@@ -21,7 +21,6 @@
     "react-hook-form": "^7.56.4"
   },
   "devDependencies": {
-    "@costco/merch-ui-components": "^0.1.77",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.1.7",
     "@types/node": "^20",
