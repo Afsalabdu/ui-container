@@ -3,7 +3,7 @@ name: Deploy Next.js UI to GKE
 on:
   push:
     branches:
-      - main  # Or whichever branch you want to trigger deployment
+      - mainfsds  # Or whichever branch you want to trigger deployment
 
 jobs:
   deploy:
