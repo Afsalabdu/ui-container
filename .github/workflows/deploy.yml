@@ -49,4 +49,4 @@ jobs:
       # Step 7: Deploy to GKE
       - name: Deploy to GKE
         run: |
-          kubectl set image deployment/nextjs-ui-deployment nextjs-ui=gcr.io/${{ secrets.GCP_PROJECT }}/nextjs-ui:$GITHUB_SHA -n dev-cosco
+          kubectl set image deployment/nextjs-ui-deployment nextjs-ui=gcr.io/${{ secrets.GCP_PROJECT }}/nextjs-ui:$GITHUB_SHA -n dev-costco
